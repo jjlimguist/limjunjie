@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Default desktop layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Style hyperlinks */
+a {
+  color: black;              /* make text black */
+  text-decoration: underline;/* keep underline */
+}
+
+/* Optional: change hover style */
+a:hover {
+  color: black;              /* stay black on hover */
+  text-decoration: underline;/* underline stays */
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  position: fixed;          /* fixed only on desktop */
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* center photo horizontally */
+  padding-top: 60px;
+}
+
+/* Profile photo */
+.profile-photo {
+  width: 220px;              /* larger box = zoom effect */
+  height: 220px;
+  object-fit: cover;         /* crop to fill */
+  object-position: center;   /* keep focus centered */
+  border-radius: 50%;        /* circle mask */
+  margin-bottom: -15px;
+  display: block;
+  flex-shrink: 0;
+  clip-path: circle(40% at center); /* smaller circle crop */
+}
+
+/* Inner text block inside sidebar */
+.sidebar-text {
+  max-width: 220px;         /* narrower block */
+  text-align: left;         /* left-align text */
+}
+
+/* Text inside sidebar */
+.sidebar-text h2,
+.sidebar-text p {
+  margin: 5px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.content {
+  margin-left: 25%;          /* push aside for sidebar */
+  width: 75%;                /* full remaining width */
+  padding: 40px;
+  overflow-y: auto;
+  box-sizing: border-box;    /* padding stays inside width */
+  border-left: 1px solid #ccc; /* subtle divider line */
+  padding-left: 40px;        /* shift text right */
+}
+
+/* Narrow text block inside right content */
+.content-text {
+  max-width: 700px;          /* narrower block */
+  margin: 0 auto;            /* center within right column */
+  text-align: left;          /* left-align text */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Responsive layout: stack columns when window is narrow */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+    overflow-y: visible;
+    box-sizing: border-box;
+  }
+
+  .sidebar-text {
+    max-width: 70%;          /* expand on mobile */
+    text-align: left;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-left: none;       /* remove divider when stacked */
+    padding-left: 30px;
+  }
+
+  .content-text {
+    max-width: 90%;          /* still narrower than full width */
+    margin: 0 auto;
+  }
+}
