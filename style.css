@@ -106,11 +106,23 @@ a:hover {
     gap: 20px;
   }
 
+    .photo-name {
+    display: flex;
+    flex-direction: column; /* stack photo + name */
+    align-items: center;
+    flex-shrink: 0;
+  }
+
   .profile-photo {
-    width: 150px;   /* smaller photo for mobile */
+    width: 150px;
     height: 150px;
-	margin-top: -20px;
-    clip-path: circle(40% at center); /* normal circle crop */
+    clip-path: circle(40% at center);
+    margin-bottom: 5px;
+  }
+
+  .sidebar-name {
+    text-align: center;
+    margin: 0;
   }
 
   .sidebar-text {
