@@ -95,7 +95,7 @@ a:hover {
     width: 100%;
     height: auto;
     padding-top: 10px;
-	padding-left: 50px;
+	padding-left: 40px;
     overflow-y: visible;
     box-sizing: border-box;
 
@@ -103,18 +103,18 @@ a:hover {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 20px;
   }
 
   .profile-photo {
     width: 150px;   /* smaller photo for mobile */
     height: 150px;
-    margin-bottom: -10px;
+	margin-top: -20px;
     clip-path: circle(40% at center); /* normal circle crop */
   }
 
   .sidebar-text {
-    max-width: 65%;
+    max-width: 75%;
     text-align: left;
   }
 
