@@ -94,12 +94,11 @@ a:hover {
     position: relative;
     width: 100%;
     height: auto;
-    padding-top: 10px;
+    padding-top: 0px;
+	padding-bottom: 10px;
 	padding-left: 30px;
     overflow-y: visible;
     box-sizing: border-box;
-
-    /*side-by-side layout for photo + text */
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
