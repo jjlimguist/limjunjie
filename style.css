@@ -21,10 +21,9 @@ a {
   text-decoration: underline;/* keep underline */
 }
 
-/* Optional: change hover style */
 a:hover {
-  color: black;              /* stay black on hover */
-  text-decoration: underline;/* underline stays */
+  color: black;
+  text-decoration: underline;
 }
 
 .sidebar {
@@ -36,30 +35,29 @@ a:hover {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;      /* center photo horizontally */
+  align-items: center;
   padding-top: 60px;
 }
 
 /* Profile photo */
 .profile-photo {
-  width: 220px;              /* larger box = zoom effect */
+  width: 220px;
   height: 220px;
-  object-fit: cover;         /* crop to fill */
-  object-position: center;   /* keep focus centered */
-  border-radius: 50%;        /* circle mask */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
   margin-bottom: -15px;
   display: block;
   flex-shrink: 0;
-  clip-path: circle(40% at center); /* smaller circle crop */
+  clip-path: circle(40% at center);
 }
 
 /* Inner text block inside sidebar */
 .sidebar-text {
-  max-width: 220px;         /* narrower block */
-  text-align: left;         /* left-align text */
+  max-width: 220px;
+  text-align: left;
 }
 
-/* Text inside sidebar */
 .sidebar-text h2,
 .sidebar-text p {
   margin: 5px 0;
@@ -68,20 +66,20 @@ a:hover {
 }
 
 .content {
-  margin-left: 25%;          /* push aside for sidebar */
-  width: 75%;                /* full remaining width */
+  margin-left: 25%;
+  width: 75%;
   padding: 40px;
   overflow-y: auto;
-  box-sizing: border-box;    /* padding stays inside width */
-  border-left: 1px solid #ccc; /* subtle divider line */
-  padding-left: 40px;        /* shift text right */
+  box-sizing: border-box;
+  border-left: 1px solid #ccc;
+  padding-left: 40px;
 }
 
 /* Narrow text block inside right content */
 .content-text {
-  max-width: 700px;          /* narrower block */
-  margin: 0 auto;            /* center within right column */
-  text-align: left;          /* left-align text */
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -96,27 +94,78 @@ a:hover {
     position: relative;
     width: 100%;
     height: auto;
-    padding-top: 20px;
+    padding-top: 10px;
+	padding-left: 50px;
     overflow-y: visible;
     box-sizing: border-box;
+
+    /*side-by-side layout for photo + text */
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+
+  .profile-photo {
+    width: 150px;   /* smaller photo for mobile */
+    height: 150px;
+    margin-bottom: -10px;
+    clip-path: circle(40% at center); /* normal circle crop */
   }
 
   .sidebar-text {
-    max-width: 70%;          /* expand on mobile */
+    max-width: 65%;
     text-align: left;
   }
 
   .content {
     margin-left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
-    border-left: none;       /* remove divider when stacked */
+    border-left: none;
     padding-left: 30px;
   }
 
   .content-text {
-    max-width: 90%;          /* still narrower than full width */
+    max-width: 90%;
     margin: 0 auto;
   }
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  border-left: 2px solid #ccc;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.show-more {
+  margin-top: 10px;
+  background: none;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
 }
