@@ -52,6 +52,12 @@ a:hover {
   clip-path: circle(40% at center);
 }
 
+.sidebar-name {
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;          
+}
+
 /* Inner text block inside sidebar */
 .sidebar-text {
   max-width: 220px;
