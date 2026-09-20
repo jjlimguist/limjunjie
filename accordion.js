@@ -14,18 +14,22 @@ document.querySelectorAll('.accordion-header').forEach(header => {
   });
 });
 
-// Show More button
+// Show More / Show Less button
 document.querySelectorAll('.show-more').forEach(button => {
   button.addEventListener('click', () => {
     const content = button.parentElement;
     const hiddenItems = content.querySelectorAll('.hidden');
 
-    hiddenItems.forEach(item => item.classList.toggle('hidden'));
-
-    // Toggle button text
     if (button.textContent === 'Show More') {
+      // Reveal hidden items
+      hiddenItems.forEach(item => item.classList.remove('hidden'));
       button.textContent = 'Show Less';
     } else {
+      // Hide items again
+      const items = content.querySelectorAll('.accordion-content li');
+      items.forEach((item, index) => {
+        if (index >= 5) item.classList.add('hidden'); // keep only first 5 visible
+      });
       button.textContent = 'Show More';
     }
   });
